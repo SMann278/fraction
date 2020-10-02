@@ -261,11 +261,6 @@ namespace ConsoleApp2
         {
             return f.Numerator / f.Denominator;
         }
-
-        public static explicit operator Fraction(int i)
-        {
-            return new Fraction(i, 1);
-        }
     }
 }
 
