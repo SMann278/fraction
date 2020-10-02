@@ -1,5 +1,3 @@
-//Simcha Mann
-
 using System;
 
 namespace ConsoleApp2
@@ -61,6 +59,7 @@ namespace ConsoleApp2
             get { return denom; }
         }
 
+        public static implicit operator Fraction(int num) => new Fraction(num)
         public static Fraction Reduce(Fraction f1)
         {
             int factor = f1.Gcf(f1);
@@ -152,47 +151,6 @@ namespace ConsoleApp2
             //in the constructor it will be automatically reduced
             Fraction answer = new Fraction(f1.num * f2.denom, f1.denom * f2.num);
             return answer;
-        }
-
-
-        public static Fraction operator +(Fraction f1, int num)
-        {
-            return f1 + (Fraction) num;
-        }
-
-        public static Fraction operator -(Fraction f1, int num)
-        {
-            return f1 - (Fraction)num;
-        }
-
-        public static Fraction operator *(Fraction f1, int num)
-        {
-            return f1 * (Fraction)num;
-        }
-
-        public static Fraction operator /(Fraction f1, int num)
-        {
-            return f1 + (Fraction)num;
-        }
-
-        public static Fraction operator +(int num, Fraction f1)
-        {
-            return f1 + (Fraction)num;
-        }
-
-        public static Fraction operator -(int num, Fraction f1)
-        {
-            return (Fraction)num - f1;
-        }
-
-        public static Fraction operator *(int num, Fraction f1)
-        {
-            return f1 * (Fraction)num;
-        }
-
-        public static Fraction operator /(int num, Fraction f1)
-        {
-            return (Fraction)num / f1;
         }
 
         public static Double operator +(Fraction f1, double num)
