@@ -1,7 +1,4 @@
-//Simcha Mann
-
 using System;
-using ConsoleApp2;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestProject1
@@ -65,6 +62,33 @@ namespace UnitTestProject1
             Assert.AreEqual(2, x);
         }
 
+        [TestMethod]
+        public void LCMTest()
+        {
+            Fraction f1 = new Fraction(1, 2);
+            Fraction f2 = new Fraction(3, 9);
+            int lcm = Fraction.Lcm(f1, f2);
+            Assert.AreEqual(18, lcm);
+        }
+
+        [TestMethod]
+        public void LCMTest2()
+        {
+            Fraction f1 = new Fraction(1, 2);
+            Fraction f2 = new Fraction(3, 2);
+            int lcm = Fraction.Lcm(f1, f2);
+            Assert.AreEqual(2, lcm);
+        }
+
+        [TestMethod]
+        public void LCMTest3()
+        {
+            Fraction f1 = new Fraction(1, 2);
+            Fraction f2 = new Fraction(3, 4);
+            int lcm = Fraction.Lcm(f1, f2);
+            Assert.AreEqual(4, lcm);
+        }
+        
         [TestMethod]
         public void AdditionTest()
         {
@@ -168,34 +192,7 @@ namespace UnitTestProject1
             Fraction f1 = new Fraction(-1, -2);
             Fraction f2 = -f1;
             Assert.AreEqual(new Fraction(1 / -2), f2);
-        }
-
-        [TestMethod]
-        public void LCMTest()
-        {
-            Fraction f1 = new Fraction(1, 2);
-            Fraction f2 = new Fraction(3, 9);
-            int lcm = Fraction.Lcm(f1, f2);
-            Assert.AreEqual(18, lcm);
-        }
-
-        [TestMethod]
-        public void LCMTest2()
-        {
-            Fraction f1 = new Fraction(1, 2);
-            Fraction f2 = new Fraction(3, 2);
-            int lcm = Fraction.Lcm(f1, f2);
-            Assert.AreEqual(2, lcm);
-        }
-
-        [TestMethod]
-        public void LCMTest3()
-        {
-            Fraction f1 = new Fraction(1, 2);
-            Fraction f2 = new Fraction(3, 4);
-            int lcm = Fraction.Lcm(f1, f2);
-            Assert.AreEqual(4, lcm);
-        }
+        }        
 
         [TestMethod]
         public void GreaterTest()
@@ -359,15 +356,7 @@ namespace UnitTestProject1
         {
             int x = 4;
             Fraction f1 = new Fraction(4, 1);
-            Assert.AreEqual(f1, (Fraction)x);
-        }
-
-        [TestMethod]
-        public void CastFracTest1()
-        {
-            int x = 1;
-            Fraction f1 = new Fraction(1, 1);
-            Assert.AreEqual(f1, (Fraction)x);
+            Assert.IsTrue(f1 == x);
         }
     }
 }
